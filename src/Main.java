@@ -1,29 +1,27 @@
-/* Write a program to Swap two Variables a and b (Swapping basically means interchanging)
-Example:-
-Input
-a=3 , b=4
-Output
-a=4, b=3
-*/
+/*Write a program to print the largest number of the two numbers given.
+Input:- a=3, b=4
+Output: 4
+ */
 
 import java.util.*;
 public class Main {
-    public static void Swap(int a, int b) {
-        a = a + b; //5 + 4 = 9
-        b = a - b; // 9 - 5 = 4
-        a = a - b; // 9 - 4 = 5
+    public static void largest(int x, int y){
+        if(x > y){
+            System.out.println("x is greater");
+        }else{
+            System.out.println("y is greater");
+        }
 
-        System.out.println("value of a " + a);
-        System.out.println("value of b " + b);
 
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args){
         Scanner input = new Scanner(System.in);
-        System.out.println("Enter value of a");
-        int a = input.nextInt();
-        System.out.println("Enter value of b");
-        int b = input.nextInt();
-        Swap(a, b);
+        System.out.println("Enter the number one");
+        int x = input.nextInt();
+        System.out.println("Enter the number two");
+        int y = input.nextInt();
+        largest(x,y);
+
     }
 }
