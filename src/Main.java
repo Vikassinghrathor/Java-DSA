@@ -1,25 +1,35 @@
-/* Write a program using only while loops to print all the even numbers from 1 to n
-Input
-if n = 10
-Output
-2
-4
-6
-8
-10
-*/
-
 import java.util.*;
+
 public class Main {
-    public static void Even_number(int n){
-        int i = 0;
-        while(i <= n){
-            i = i + 2;
-            System.out.println(i);
+    public static void selectionSort(int arr[]) {
+        int n = arr.length;
+
+        for (int i = 0; i < n - 1; i++) {
+            int minIndex = i;
+
+            // Find the index of the minimum element in the remaining unsorted array
+            for (int j = i + 1; j < n; j++) {
+                if (arr[j] < arr[minIndex]) {
+                    minIndex = j;
+                }
+            }
+
+            // Swap the found minimum element with the first element in the unsorted part of the array
+            int temp = arr[minIndex];
+            arr[minIndex] = arr[i];
+            arr[i] = temp;
         }
     }
-    public static void main(String[] args){
-        int n = 25;
-        Even_number(n);
+
+    public static void main(String[] args) {
+        int arr[] = {34, 5, 9, 13, 21};
+        int n = arr.length;
+
+        selectionSort(arr);
+
+        // Print the sorted array
+        for (int i = 0; i < n; i++) {
+            System.out.print(arr[i] + " ");
+        }
     }
 }
